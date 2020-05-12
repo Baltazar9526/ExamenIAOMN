@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "ExamenIAOMN"
+    }
+  },
+  "defaultProject": "ExamenIAOMN",
+  "cli": {
+    "analytics": "627e3333-e65c-4052-8837-d16ce521fa8d"
+  }
 }
