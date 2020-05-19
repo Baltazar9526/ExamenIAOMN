@@ -8,6 +8,10 @@ import * as pluginDataLabels from 'chartjs-plugin-datalabels';
   styleUrls: ['./grafo-pie.component.scss']
 })
 export class GrafoPieComponent implements OnInit {
+  params = {
+    dimension: String,
+    focus: String
+  };
   // Pie
   public pieChartOptions: ChartOptions = {
     responsive: true,
@@ -33,17 +37,14 @@ export class GrafoPieComponent implements OnInit {
       backgroundColor: ['rgba(255,0,0,0.3)', 'rgba(0,255,0,0.3)', 'rgba(0,0,255,0.3)'],
     },
   ];
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
   // events
   public chartClicked({ event, active }: { event: MouseEvent, active: {}[] }): void {
     console.log(event, active);
   }
-  
   public chartHovered({ event, active }: { event: MouseEvent, active: {}[] }): void {
     console.log(event, active);
   }
-  
   changeLabels() {
     const words = ['hen', 'variable', 'embryo', 'instal', 'pleasant', 'physical', 'bomber', 'army', 'add', 'film',
     'conductor', 'comfortable', 'flourish', 'establish', 'circumstance', 'chimney', 'crack', 'hall', 'energy',
@@ -53,20 +54,29 @@ export class GrafoPieComponent implements OnInit {
     const randomWord = () => words[Math.trunc(Math.random() * words.length)];
     this.pieChartLabels = Array.apply(null, { length: 3 }).map(_ => randomWord());
   }
-  
   addSlice() {
     this.pieChartLabels.push(['Line 1', 'Line 2', 'Line 3']);
     this.pieChartData.push(400);
     this.pieChartColors[0].backgroundColor.push('rgba(196,79,244,0.3)');
   }
-  
   removeSlice() {
     this.pieChartLabels.pop();
     this.pieChartData.pop();
     this.pieChartColors[0].backgroundColor.pop();
   }
-  
   changeLegendPosition() {
     this.pieChartOptions.legend.position = this.pieChartOptions.legend.position === 'left' ? 'top' : 'left';
+  }
+  public randomize(): void {
+    const data = [
+      Math.random() * 100,
+      Math.random() * 100,
+      Math.random() * 100
+      ];
+    this.pieChartData = data;
+  }
+  setDimension(param){
+    this.params.dimension = param;
+    console.log(this.params);
   }
 }

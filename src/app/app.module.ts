@@ -10,13 +10,15 @@ import { NgSelectModule } from '@ng-select/ng-select';
 import { FormsModule } from '@angular/forms';
 import { GrafoPieComponent } from './components/pages/grafo-pie/grafo-pie.component';
 import { GrafoBarraComponent } from './components/pages/grafo-barra/grafo-barra.component';
+import { DWHNorthwindComponent } from './services/dwhnorthwind/dwhnorthwind.component';
 @NgModule({
   declarations: [
     AppComponent,
     MenuComponent,
     InicioComponent,
     GrafoPieComponent,
-    GrafoBarraComponent
+    GrafoBarraComponent,
+    DWHNorthwindComponent
   ],
   imports: [
     BrowserModule,

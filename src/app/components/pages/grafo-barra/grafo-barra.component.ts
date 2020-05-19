@@ -8,6 +8,10 @@ import { Label } from 'ng2-charts';
   styleUrls: ['./grafo-barra.component.scss']
 })
 export class GrafoBarraComponent implements OnInit {
+  params = {
+    dimension: String,
+    focus: String
+  };
   public barChartOptions: ChartOptions = {
     responsive: true,
     // We use these empty structures as placeholders for dynamic theming.
@@ -48,5 +52,9 @@ export class GrafoBarraComponent implements OnInit {
       (Math.random() * 100),
       40];
     this.barChartData[0].data = data;
+  }
+  setDimension(param){
+    this.params.dimension = param;
+    console.log(this.params);
   }
 }

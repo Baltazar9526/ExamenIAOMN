@@ -1,4 +1,29 @@
-<div>
+<div class="btn-toolbar justify-content-center" style="background-color: #e3f2fd;">
+	<nav class="navbar navbar-expand-lg">
+		<div class="collapse navbar-collapse" id="navbarNavDropdown">
+			<ul class="navbar-nav">
+				<li class="nav-item">
+					<a class="nav-link active" (click)="pieChartLegend=!pieChartLegend">Hide Legend</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link active" (click)="randomize()">Update</a>
+				</li>
+				<li class="nav-item dropdown active">
+					<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						Dimension
+					</a>
+					<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+						<a class="dropdown-item" (click)="setDimension('Tiempo')">Tiempo</a>
+						<a class="dropdown-item" (click)="setDimension('Producto')">Producto</a>
+						<a class="dropdown-item" (click)="setDimension('Cliente')">Cliente</a>
+						<a class="dropdown-item" (click)="setDimension('Empleado')">Empleado</a>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</nav>
+</div>
+<div style="background-color: #e3f2fd;">
 	<div>
 		<div class="chart">
 			<canvas baseChart
@@ -11,24 +36,4 @@
 			[legend]="pieChartLegend">
 		</canvas>
 	</div>
-</div>
-</div>
-<div>
-	<ul class="nav justify-content-center">
-		<li class="nav-item">
-			<a class="nav-link" (click)="pieChartLegend=!pieChartLegend">Toggle Legend</a>
-		</li>
-		<li class="nav-item">
-			<a class="nav-link" (click)="changeLabels()">Change Labels</a>
-		</li>
-		<li class="nav-item">
-			<a class="nav-link" (click)="addSlice()">Add Slice</a>
-		</li>
-		<li class="nav-item">
-			<a class="nav-link" (click)="removeSlice()">Remove Slice</a>
-		</li>
-		<li class="nav-item">
-			<a class="nav-link" (click)="changeLegendPosition()">Change Legend Position</a>
-		</li>
-	</ul>
 </div>
