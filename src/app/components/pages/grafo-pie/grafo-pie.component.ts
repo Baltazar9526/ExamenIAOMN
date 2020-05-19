@@ -10,7 +10,8 @@ import * as pluginDataLabels from 'chartjs-plugin-datalabels';
 export class GrafoPieComponent implements OnInit {
   params = {
     dimension: String,
-    focus: String
+    mes: String,
+    anio: String,
   };
   // Pie
   public pieChartOptions: ChartOptions = {
@@ -77,6 +78,14 @@ export class GrafoPieComponent implements OnInit {
   }
   setDimension(param){
     this.params.dimension = param;
+    console.log(this.params);
+  }
+  setMes(param){
+    this.params.mes = param;
+    console.log(this.params);
+  }
+  setAnio(param){
+    this.params.anio = param;
     console.log(this.params);
   }
 }

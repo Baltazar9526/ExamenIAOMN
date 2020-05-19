@@ -10,7 +10,8 @@ import { Label } from 'ng2-charts';
 export class GrafoBarraComponent implements OnInit {
   params = {
     dimension: String,
-    focus: String
+    mes: String,
+    anio: String,
   };
   public barChartOptions: ChartOptions = {
     responsive: true,
@@ -55,6 +56,14 @@ export class GrafoBarraComponent implements OnInit {
   }
   setDimension(param){
     this.params.dimension = param;
+    console.log(this.params);
+  }
+  setMes(param){
+    this.params.mes = param;
+    console.log(this.params);
+  }
+  setAnio(param){
+    this.params.anio = param;
     console.log(this.params);
   }
 }
