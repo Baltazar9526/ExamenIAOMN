@@ -1,5 +1,17 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-	<a class="navbar-brand" [routerLink]="['/inicio']">Inicio</a>
-	<a class="nav-item nav-link" [routerLink]="['/grafoBarra']">Barras</a>
-	<a class="nav-item nav-link" [routerLink]="['/grafoPie']">Pie</a>
+	<div class="collapse navbar-collapse" id="navbarSupportedContent">
+		<ul class="navbar-nav mr-auto">
+			<a class="navbar-brand" [routerLink]="['/inicio']">Inicio</a>
+			<a class="nav-item nav-link" [routerLink]="['/grafoBarra']" routerLinkActive="active" *ngIf="authSvc.userData$ | async">Barras</a>
+			<a class="nav-item nav-link" [routerLink]="['/grafoPie']" routerLinkActive="active" *ngIf="authSvc.userData$ | async">Pie</a>
+		</ul>
+		<form class="form-inline my-2 my-lg-0">
+			<a class="nav-item nav-link" [routerLink]="['/registro']">Registro</a>
+			<ng-template #showLogin>	
+				<a class="nav-item nav-link" [routerLink]="['/iniciarSesion']" *ngIf="!authSvc.userData$">Iniciar Sesion</a>
+			</ng-template>
+			<a *ngIf="authSvc.userData$ | async; else showLogin">
+			</a>
+		</form>
+	</div>
 </nav>

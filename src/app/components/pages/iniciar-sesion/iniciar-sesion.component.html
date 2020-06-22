@@ -1,0 +1,16 @@
+<br/>
+<div class="mx-auto" style="width: 50%;">
+	<div class="input-group mb-3">
+		<div class="input-group-prepend">
+			<span class="input-group-text" id="inputGroup-sizing-default">Email</span>
+		</div>
+		<input type="email" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" [(ngModel)]="email" [ngModelOptions]="{standalone: true}" value="nar_ichi95@hotmail.com"> 
+	</div>
+	<div class="input-group mb-3">
+		<div class="input-group-prepend">
+			<span class="input-group-text" id="inputGroup-sizing-default">Password</span>
+		</div>
+		<input type="password" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" [(ngModel)]="password" [ngModelOptions]="{standalone: true}">
+	</div>
+	<button type="button" class="btn btn-primary btn-lg btn-block" (click)="inicioSesion()">Iniciar Sesion</button>
+</div>

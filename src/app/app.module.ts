@@ -10,7 +10,11 @@ import { NgSelectModule } from '@ng-select/ng-select';
 import { FormsModule } from '@angular/forms';
 import { GrafoPieComponent } from './components/pages/grafo-pie/grafo-pie.component';
 import { GrafoBarraComponent } from './components/pages/grafo-barra/grafo-barra.component';
-import { DWHNorthwindComponent } from './services/dwhnorthwind/dwhnorthwind.component';
+import { RegistroComponent } from './components/pages/registro/registro.component';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireDatabaseModule } from '@angular/fire/database';
+import { environment } from '../environments/environment';
+import { IniciarSesionComponent } from './components/pages/iniciar-sesion/iniciar-sesion.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,7 +22,9 @@ import { DWHNorthwindComponent } from './services/dwhnorthwind/dwhnorthwind.comp
     InicioComponent,
     GrafoPieComponent,
     GrafoBarraComponent,
-    DWHNorthwindComponent
+    RegistroComponent,
+    RegistroComponent,
+    IniciarSesionComponent
   ],
   imports: [
     BrowserModule,
@@ -26,7 +32,9 @@ import { DWHNorthwindComponent } from './services/dwhnorthwind/dwhnorthwind.comp
     ChartsModule,
     HttpClientModule,
     NgSelectModule,
-    FormsModule
+    FormsModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireDatabaseModule
   ],
   providers: [],
   bootstrap: [AppComponent]

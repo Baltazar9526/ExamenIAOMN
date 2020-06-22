@@ -1,0 +1,44 @@
+<br/>
+<form>
+	<div class="mx-auto" style="width: 80%;">
+		<div class="form-row">
+			<div class="input-group mb-3 col-7">
+				<div class="input-group-prepend">
+					<span class="input-group-text" id="inputGroup-sizing-default">Nombre Completo</span>
+				</div>
+				<input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" [(ngModel)]="tempName" [ngModelOptions]="{standalone: true}">
+			</div>
+			<div class="input-group mb-3 col">
+				<div class="input-group-prepend">
+					<span class="input-group-text" id="inputGroup-sizing-default">Password</span>
+				</div>
+				<input type="password" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" [(ngModel)]="tempPassword" [ngModelOptions]="{standalone: true}">
+			</div>
+		</div>
+		<div class="form-row">
+			<div class="input-group mb-3 col-5">
+				<div class="input-group-prepend">
+					<span class="input-group-text" id="inputGroup-sizing-default">Email</span>
+				</div>
+				<input type="email" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" [(ngModel)]="tempEmail" [ngModelOptions]="{standalone: true}">
+			</div>
+			<div class="input-group mb-3 col">
+				<div class="input-group-prepend">
+					<span class="input-group-text" id="inputGroup-sizing-default">Foto</span>
+				</div>
+				<input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" [(ngModel)]="tempFoto" [ngModelOptions]="{standalone: true}">
+			</div>
+		</div>
+		<div class="input-group">
+			<div class="input-group-prepend">
+				<span class="input-group-text" id="inputGroup-sizing-default">Rol</span>
+			</div>
+			<select class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" [(ngModel)]="tempRol" [ngModelOptions]="{standalone: true}">
+				<option>Pie</option>
+				<option>Barras</option>
+			</select>
+		</div>
+		<br/>
+		<button type="button" class="btn btn-primary btn-lg btn-block" (click)="registrarUsuario()">Registrar</button>
+	</div>
+</form>
