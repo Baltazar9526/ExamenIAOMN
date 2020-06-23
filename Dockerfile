@@ -1,5 +1,4 @@
-FROM node:12.0-alpine as build-step
-WORKDIR /app
+FROM node AS builder
 COPY package.json ./
 RUN npm install
 COPY . .
