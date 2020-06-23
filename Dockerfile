@@ -1,5 +1,4 @@
-# base image
-FROM node:11.15.0-alphine as build-step
+FROM node:11.15.0-alpine as build-step
 WORKDIR /app
 COPY package.json ./
 RUN npm istall
